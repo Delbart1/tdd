@@ -123,7 +123,7 @@ public class TestConvert {
 	
 	@Test
 	public void test_num2text_quarante_quatre() {
-		Assert.assertEquals("quarante-quatre", Convert.num2text("44"));
+		Assert.assertEquals("six virgule quatre", Convert.num2text("6.4"));
 
 	}
 	

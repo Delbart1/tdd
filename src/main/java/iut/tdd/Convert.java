@@ -52,10 +52,22 @@ public class Convert {
 		return null;
 
 	}
+	
+	public static  String num2virgule(String input){
+		int length = input.length();
+		switch(length){
+		case 3 : if(input.charAt(1)== '.'){
+			return zero2twenty("" + input.charAt(0)) + " virgule " + zero2twenty("" + input.charAt(2));
+		}
+		}
+		return null;
+		
+	}
 
 	public static String num2text(String input) {
 		int length = input.length();
 		if(zero2twenty(input)==null){
+			if(num2virgule(input)==null){
 		switch(length){
 		case 2: switch(input.charAt(0)){
 		case '2' :  return "vingt-" + num2text("" + input.charAt(1));
@@ -67,6 +79,9 @@ public class Convert {
 		}
 		}
 		}
+			else{ return num2virgule(input);}
+		}
+
 		else{ return zero2twenty(input);}
 		
 		
