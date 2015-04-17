@@ -2,8 +2,7 @@ package iut.tdd;
 
 public class Convert {
 
-	public static String num2text(String input) {
-		int length = input.length();
+	public static String zero2twenty(String input) {
 
 		switch (input) {
 		case "0":
@@ -40,7 +39,7 @@ public class Convert {
 			return "quinze";
 		case "16":
 			return "seize";
-			
+
 		case "17":
 			return "dix-sept";
 		case "18":
@@ -49,10 +48,28 @@ public class Convert {
 			return "dix-neuf";
 		case "20":
 			return "vingt";
-	
-	
-
 		}
+		return null;
+
+	}
+
+	public static String num2text(String input) {
+		int length = input.length();
+		if(zero2twenty(input)==null){
+		switch(length){
+		case 2: switch(input.charAt(0)){
+		case '2' :  return "vingt-" + num2text("" + input.charAt(1));
+		case '3' : return "trente-" + num2text("" + input.charAt(1));
+		case '4' : return "quarante-" + num2text ("" + input.charAt(1));
+		case '5' : return "cinquante-" + num2text ("" + input.charAt(1));
+		case '6' : return "soixante-" + num2text ("" + input.charAt(1));
+		case '8' : return "quatre-vingt-" + num2text ("" + input.charAt(1));
+		}
+		}
+		}
+		else{ return zero2twenty(input);}
+		
+		
 
 		return null;
 	}
