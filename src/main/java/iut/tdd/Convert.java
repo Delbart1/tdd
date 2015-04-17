@@ -55,11 +55,10 @@ public class Convert {
 	
 	public static  String num2virgule(String input){
 		int length = input.length();
-		switch(length){
-		case 3 : if(input.charAt(1)== '.'){
+	 if(input.charAt(1)== '.'){
 			return zero2twenty("" + input.charAt(0)) + " virgule " + zero2twenty("" + input.charAt(2));
 		}
-		}
+		
 		return null;
 		
 	}
